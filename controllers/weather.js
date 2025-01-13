@@ -4,8 +4,6 @@ const getcurrent = async (req, res, next) => {
 		const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}&units=metric`;
 		const response = await fetch(URL);
 		const data = await response.json();
-		// console.log(response.statusText, response.status);
-		// console.log(data);
 		if (response.status !== 200) {
 			return res.status(response.status).send({
 				success: false,
